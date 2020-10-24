@@ -46,7 +46,22 @@ srcディレクトリ配下をvisual stadio code で開く
 ```
 docker-compose down
 ```
+### その他
+docker-compose.ymlに以下のようにcommandを追記すると
+次回から、docker-compose up -dだけで開発サーバーを起動することができる。
+```
+version: '3.7'
 
+services:
+  php:
+    image: php:7.4-fpm-alpine
+    container_name: php
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - "8000:8000"
+    command: php artisan serve --host=0.0.0.0 --port=8000
+```
 
 
 
