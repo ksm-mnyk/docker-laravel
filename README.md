@@ -18,7 +18,7 @@ cd docker-laravel/
 docker-compose up -d
 ```
 
-### composerを使用して、laravelプロジェクト作成
+### composerを使用して、laravelプロジェクト作成(初回のみ必要）
 ```
 docker run --rm -v `pwd`/src:/app composer create-project --prefer-dist laravel/laravel .
 ```
@@ -33,7 +33,7 @@ docker exec -it php php artisan serve --host=0.0.0.0 --port=8000
 ```
 
 ### アクセス
-ブラウザで localhot:8000 へアクセス
+ブラウザで localhot:8000 へアクセス
 
 ### ソース改造
 ```
@@ -42,7 +42,10 @@ code .
 ```
 srcディレクトリ配下をvisual stadio code で開く
 
-
+### コンテナ停止
+```
+docker-compose down
+```
 
 
 
